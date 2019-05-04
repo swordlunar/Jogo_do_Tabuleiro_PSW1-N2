@@ -1,0 +1,36 @@
+.tabuleiro{
+	display: grid;
+	height: 70vh;
+	grid-template-columns: 10% 10% 10% 10% 10% 10%;
+	grid-template-rows: 20% 20% 20% 20%;
+}
+.Pos1{
+	display: grid;
+	background-color: red;
+	height: 100%;
+	grid-column-start: 1;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+.Pos2{
+	display: grid;
+	background-color: pink;
+	height: 100%;
+	grid-column-start: 2;
+	border-top-right-radius: 20px;
+}
+.Pos3{
+	display: grid;
+	background-color: blue;
+	height: 100%;
+	grid-column-start: 2;
+	border-bottom-left-radius: 20px;
+}
+.Pos4{
+	display: grid;
+	background-color: green;
+	height: 100%;
+	grid-column-start: 3;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}

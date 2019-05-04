@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Teste</title>
+	<link rel="stylesheet" type="text/css" href="TesteGrid.css">
+
+	<script type="text/javascript">
+		function pegarvalor() {
+			var valor = document.getElementById("dado").value;
+
+			document.getElementById("Pos"+valor+"").innerHTML="Aqui esta voce";
+		}
+	</script>
+</head>
+<body>
+		<div class="tabuleiro" align="center">
+			<div class="Pos1" id="Pos1">Inicio</div>
+			<div class="Pos2" id="Pos2">1</div>
+			<div class="Pos3" id="Pos3">2</div>
+			<div class="Pos4" id="Pos4">Fim</div>
+		</div>
+
+		<center><input type="text" id="dado"><button onclick="pegarvalor();">Dado</button></center>
+</body>
+</html>
