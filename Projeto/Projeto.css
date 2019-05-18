@@ -15,13 +15,23 @@
 .main{
 	top: 2%;
 	left: 68%;
-	width: 50%;
+	width: 32%;
 	height: 97%;
 	position: absolute;
 	background-color: lightblue;
 	text-align: center;
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+	font-family: xilosa;
+	font-size: 48px;
+}
+.perguntas{
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white;
+	margin-left: 5%;
+	margin-right: 5%;
 }
 .Pos0{
 	display: grid;
