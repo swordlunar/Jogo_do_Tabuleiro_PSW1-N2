@@ -1,5 +1,10 @@
+var cont = 1;
 var passoAtual=0;
+
+
 function sortearNumero(){
+
+	cont ++;
 	
 	var numeroSorteado = (Math.floor(Math.random() * 6))+ 1;
 
@@ -17,14 +22,20 @@ function sortearNumero(){
 }
 
 function mover(passoAtual,numeroSorteado){
-	var coordenada;
+
+	if (passoAtual >= 36) {
+		var coordenada = $("#Pos36").offset();
+		alert("Voçê Ganhou");
+
+	}else{
+		var coordenada = $("#Pos"+passoAtual+"").offset();
+	}
 	
-	coordenada = $("#Pos"+passoAtual+"").offset();
 
 	$(".player").animate({
 		top: coordenada.top,
 		left:coordenada.left,
-	}, 800);
+	}, 2000);
 
 }
 
