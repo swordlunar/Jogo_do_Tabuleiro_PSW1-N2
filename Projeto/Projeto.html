@@ -2,24 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Teste</title>
+	<title>Jogo Tabuleiro</title>
 	<link rel="stylesheet" type="text/css" href="Projeto.css">
-
-	<script type="text/javascript">
-		function pegarvalor() {
-			var valor = document.getElementById("dado").value;
-
-			document.getElementById("Pos"+valor+"").innerHTML="Aqui esta voce";
-		}
-	</script>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="Projeto.js"></script>
 </head>
-<body style="font-size: 5vw;">
+<body style="font-size: 5vw;" onload="carregarBoneco();">
 		<div class="tabuleiro" align="center">
 			<div class="Pos0" id="Pos0">Largada</div>
+			<div class="player"></div>
 
 			<div class="Pos1" id="Pos1">1</div>
 			<div class="Pos2" id="Pos2">2</div>
-			<div class="Pos3" id="Pos3">[</div>
+			<div class="Pos3" id="Pos3">3</div>
 			<div class="Pos4" id="Pos4">4</div>
 			<div class="Pos5" id="Pos5">5</div>
 			<div class="Pos6" id="Pos6">6</div>
@@ -28,39 +23,45 @@
 
 			<div class="Pos9" id="Pos9">9</div>
 
-			<div class="Pos11" id="Pos1">17</div>
-			<div class="Pos12" id="Pos2">16</div>
-			<div class="Pos13" id="Pos3">15</div>
-			<div class="Pos14" id="Pos4">14</div>
-			<div class="Pos15" id="Pos5">13</div>
-			<div class="Pos16" id="Pos6">12</div>
-			<div class="Pos17" id="Pos7">11</div>
+			<div class="Pos11" id="Pos17">17</div>
+			<div class="Pos12" id="Pos16">16</div>
+			<div class="Pos13" id="Pos15">15</div>
+			<div class="Pos14" id="Pos14">14</div>
+			<div class="Pos15" id="Pos13">13</div>
+			<div class="Pos16" id="Pos12">12</div>
+			<div class="Pos17" id="Pos11">11</div>
 			<div class="Pos10" id="Pos10">10</div>
 
-			<div class="Pos18" id="Pos10">18</div>
+			<div class="Pos18" id="Pos18">18</div>
 
-			<div class="Pos19" id="Pos1">19</div>
-			<div class="Pos20" id="Pos2">20</div>
-			<div class="Pos21" id="Pos3">21</div>
-			<div class="Pos22" id="Pos4">22</div>
-			<div class="Pos23" id="Pos5">23</div>
-			<div class="Pos24" id="Pos6">24</div>
-			<div class="Pos25" id="Pos7">25</div>
-			<div class="Pos26" id="Pos8">26</div>
+			<div class="Pos19" id="Pos19">19</div>
+			<div class="Pos20" id="Pos20">20</div>
+			<div class="Pos21" id="Pos21">21</div>
+			<div class="Pos22" id="Pos22">22</div>
+			<div class="Pos23" id="Pos23">23</div>
+			<div class="Pos24" id="Pos24">24</div>
+			<div class="Pos25" id="Pos25">25</div>
+			<div class="Pos26" id="Pos26">26</div>
 
-			<div class="Pos27" id="Pos8">27</div>
+			<div class="Pos27" id="Pos27">27</div>
 
-			<div class="Pos28" id="Pos1">35</div>
-			<div class="Pos29" id="Pos2">34</div>
-			<div class="Pos30" id="Pos3">33</div>
-			<div class="Pos31" id="Pos4">32</div>
-			<div class="Pos32" id="Pos5">31</div>
-			<div class="Pos33" id="Pos6">30</div>
-			<div class="Pos34" id="Pos7">29</div>
-			<div class="Pos35" id="Pos8">28</div>
+			<div class="Pos28" id="Pos35">35</div>
+			<div class="Pos29" id="Pos34">34</div>
+			<div class="Pos30" id="Pos33">33</div>
+			<div class="Pos31" id="Pos32">32</div>
+			<div class="Pos32" id="Pos31">31</div>
+			<div class="Pos33" id="Pos30">30</div>
+			<div class="Pos34" id="Pos29">29</div>
+			<div class="Pos35" id="Pos28">28</div>
 
-			<div class="Pos36" id="Pos1">Chegada</div>
+			<div class="Pos36" id="Pos36">Chegada</div>
 		</div>
-		<div class="main"> ass</div>
+		<div class="main" align="center">
+			<center>
+				<button onclick="sortearNumero();">Jogar</button>
+				<input type="text" id="IpNumeroSorteado" placeholder="Número Sorteado" size="15">
+				<input type="text" id="IpPassoAtual" placeholder="Passo Atual" size="15">
+			</center>
+		</div>
 
 </html>

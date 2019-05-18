@@ -23,6 +23,13 @@
 	font-size: 18px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+.player{
+	position: absolute;
+	background-color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
 .Pos0{
 	display: grid;
 	background-image:radial-gradient(#96ce80ff, #96ce80ff, #7ec363ff); /*Verde*/
@@ -65,7 +72,6 @@
 	border-style: solid;
 	border-color: black;
 	border-right: 0.2vw;
-	font-size: 10vw;
 }
 .Pos4{
 	display: grid;
