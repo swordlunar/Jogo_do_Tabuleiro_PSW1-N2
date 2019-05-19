@@ -1,7 +1,53 @@
 var cont = 1;
 var scorePlayer0=0;
 var scorePlayer1=0;
+		
+		var p = new Array();
+	    var r = new Array();
 
+	    // LISTA DE PERGUNTAS
+	    p[1] = "A Chapada do Araripe é conhecida como berço da paleontologia nacional, a qual possui como importante descoberta o fossil ______ , por exemplo.";
+	    r[1] = 'da primeira flor do planeta';
+	    p[2] = "Uma Ave caracteristica do Geoparque do Araripe é ______ - do - Araripe.";
+	    r[2] = 'o Soldadinho';
+	    p[3] = "A primeira Floresta Nacional do Brasil foi criada na Chapada do Araripe, sendo conhecida como:";
+	    r[3] = 'FLONA';
+	    p[4] = "O Museu de Paleontologia de Santana do Cariri, foi fundado e inaugurado no dia 26 de julho de 1988, data esta que marca a sua doação por contrato de comodato a uma instituição de ensino da região, adicionando o nome da mesma ao nome do Museu. Qual a instituição de ensino responsável por administrar esse museu?";
+	    r[4] = 'URCA';
+	    p[5] = "O Museu de Paleontologia da região do cariri fica situado em qual cidade?";
+	    r[5] = 'Santana do Cariri';
+	    p[6] = "O Museu de Paleontologia da região do cariri é responsável por projetos de escavações permanantes na:";
+	    r[6] = 'Chapada do Araripe';
+	    p[7] = "O Luzeiro da Fé é uma torre de 113 metros de altura e foi concebido como uma homenagem:";
+	    r[7] = 'aos Romeiros';
+	    p[8] = "Em qual cidade fica localizado o Luzeiro da Fé?";
+	    r[8] = 'Juazeiro do Norte';
+	    p[9] = "O Luzeiro da Fé também é conhecido como:";
+	    r[9] = 'Luzeiro do Cariri';
+	    p[10] = "A estatua de Nossa Senhora de Fátima está situada em qual cidade do cariri?";
+	    r[10] = 'Crato';
+	    p[11] = "O monumento de Nossa Senhora de Fátima foi feito em homenagem a:"
+	    r[11] = 'O Aniversário de 250 anos do Crato';
+	    p[12] = "A estatua de Nossa Senhora de Fátima é considerado um dos maioiores monumentos do Brasil, sendo maior até que o monumento do Cristo Redentor. Qual o tamanho dessa estatua?"
+	    r[12] = '45 Metros';
+	    p[13] = "O monumento (estatua) em homenagem a Padre Cicero Romão Batista está localizada em qual cidade?"
+	    r[13] = 'Juazeiro do Norte';
+	    p[14] = "A estatua do Padre Cicero foi inaugurada no dia 1° de 1969, no alto da colina do horto, ou como é conhecida:"
+	    r[14] = 'Serra do Catolé';
+	    p[15] = "A estatua do Padre Cicero foi criada em homenagem ao grande lider religioso e politico da região do cariri, o qual é conhecido pelo:"
+	    r[15] = 'Milagre da Hóstia';
+	    p[16] = "A Igreja Matriz de São José foi nomeada em nome do padroeiro de uma cidade do cariri. Qual o nome dessa cidade?"
+	    r[16] = 'Missão Velha';
+	    p[17] = "A Igreja Matriz de São José de Missão Velha está localizada na praça principal de sua cidade. Qual o nome dessa praça?"
+	    r[17] = 'Praça Monsenhor Horácio';
+	    p[18] = "O Primeiro templo catolico da região do cariri foi construido em 1725 pelos portugueses, o qual recebeu o nome de:"
+	    r[18] = 'Igreja Matriz de São José';
+	    p[19] = "A festa do 'Pau da Bandeira', festividade anual popular da região do cariri, é realizada em qual cidade?"
+	    r[19] = 'Barbalha';
+	    p[20] = "A festa do 'Pau da Bandeira', festividade anual popular da região do cariri, é dedicada ao Santo Padroeiro de Barbalha. Qual o nome desse Santo?"
+	    r[20] = 'Santo Antonio';
+	    p[21] = "A festa do Santo Antonio de Barbalha, tem como principal atração a derrubada e transporte de um tronco que servirá como 'Pau da Bandeira'. Qual a Bandeira hasteada nessa comemoração?"
+	    r[21] = 'Bandeira de Santo Antonio';
 
 function sortearNumero(){
 	var passoAtual=0;
