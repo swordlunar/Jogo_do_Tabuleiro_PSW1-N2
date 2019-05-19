@@ -215,6 +215,7 @@
 	border-style: solid;
 	border-color: black;
 	border-right: 0.2vw;
+	align-content: center;
 }
 .Pos10{
 	display: grid;
@@ -281,6 +282,7 @@
 	border-style: solid;
 	border-color: black;
 	border-right: 0.2vw;
+	align-content: center;
 }
 .Pos24{
 	display: grid;
@@ -373,6 +375,7 @@
 	border-style: solid;
 	border-color: black;
 	border-right: 0.2vw;
+	align-content: center;
 }
 .Pos32{
 	display: grid;
@@ -391,6 +394,7 @@
 	border-style: solid;
 	border-color: black;
 	border-right: 0.2vw;
+	align-content: center;
 }
 .Pos34{
 	display: grid;
