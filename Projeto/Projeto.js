@@ -6,6 +6,7 @@ var scorePlayer1=0;
 	    var r = new Array();
 	    //var o = new Array();
  		var opcoes = new Array(
+ 			["Contingencia","Contingencia","Contingencia","Contingencia"],
 			["DO HUMANO MAIS ANTIGO","DA PRIMEIRA FLOR DO PLANETA","DE UM PEIXE COM 10000 MIL anos","DE UM ALIENIGENA"],
 			["O SOLDADINHO","CAMPINA","ROLINHA","CANCÃO"],
 			["FLORA","ARARI","FLORESTA ARARIPE","FLONA"],
@@ -97,7 +98,7 @@ function sortearNumero(){
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao-1][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
     			if (i == 1){
     				$('#pergunta').append('<br>');
@@ -120,7 +121,7 @@ function sortearNumero(){
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao-1][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
     			if (i == 1){
     				$('#pergunta').append('<br>');
