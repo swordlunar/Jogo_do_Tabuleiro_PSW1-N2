@@ -1,9 +1,10 @@
 var cont = 1;
 var scorePlayer0=0;
 var scorePlayer1=0;
-		
+		var questoesRespondidas = new Array();
 		var p = new Array();
 	    var r = new Array();
+	    //var o = new Array();
  		var opcoes = new Array(
 			["DO HUMANO MAIS ANTIGO","DA PRIMEIRA FLOR DO PLANETA","DE UM PEIXE COM 10000 MIL anos","DE UM ALIENIGENA"],
 			["O SOLDADINHO","CAMPINA","ROLINHA","CANCÃO"],
@@ -104,6 +105,7 @@ function sortearNumero(){
 			}
 			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
 			//$("#pergunta").append(questoesRespondidas);
+		}
 	}else{
 		var pin = 1;
 		scorePlayer1 += numeroSorteado;
@@ -128,6 +130,7 @@ function sortearNumero(){
 			//$("#pergunta").append(questoesRespondidas);
 
 	}
+}
 	var posicao;
 	
 	if (scorePlayer0>scorePlayer1)
