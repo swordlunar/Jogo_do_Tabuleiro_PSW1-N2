@@ -75,6 +75,7 @@ var scorePlayer1=0;
 
 function sortearNumero(){
 	var passoAtual=0;
+	var resposta = 0;
 
 	cont ++;
 	
@@ -89,7 +90,7 @@ function sortearNumero(){
 		scorePlayer0 += numeroSorteado;
 		scorePlayer0 = eval(scorePlayer0);
 		document.getElementById("IpPassoAtual").value = scorePlayer0;
-		mover(scorePlayer0,numeroSorteado,pin);
+		mover(scorePlayer0,pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
 		if (scorePlayer0 == 3 || scorePlayer0 == 8 || scorePlayer0 == 11 || scorePlayer0 == 16 || scorePlayer0 == 23 || scorePlayer0 == 30 || scorePlayer0 ==32) {
@@ -107,12 +108,13 @@ function sortearNumero(){
 			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
 			//$("#pergunta").append(questoesRespondidas);
 		}
+		questaoM(scorePlayer0,pin,resposta);
 	}else{
 		var pin = 1;
 		scorePlayer1 += numeroSorteado;
 		scorePlayer1 = eval(scorePlayer1);
 		document.getElementById("IpPassoAtual").value = scorePlayer1;
-		mover(scorePlayer1,numeroSorteado,pin);
+		mover(scorePlayer1,pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
 		if (scorePlayer1 == 3 || scorePlayer1 == 8 || scorePlayer1 == 11 || scorePlayer1 == 16 || scorePlayer1 == 23 || scorePlayer1 == 30 || scorePlayer1 ==32) {
@@ -129,8 +131,10 @@ function sortearNumero(){
 			}
 			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
 			//$("#pergunta").append(questoesRespondidas);
-
+		
 	}
+
+	questaoM(scorePlayer1,pin,resposta);
 }
 	var posicao;
 	
@@ -142,8 +146,7 @@ function sortearNumero(){
 	mudarBackground(posicao);
 }
 
-function mover(passoAtual,numeroSorteado,pin){
-
+function mover(passoAtual,pin){
 
 	if (passoAtual >= 36) {
 		var coordenada = $("#Pos36").offset();
@@ -159,7 +162,20 @@ function mover(passoAtual,numeroSorteado,pin){
 		left:coordenada.left,
 	}, 2000);
 	
+	
+}
 
+function questaoM(passoAtual,pin,resposta){
+	
+	if (resposta == 0){
+		passoAtual -= 2;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
 }
 
 function mudarBackground(posicao){
