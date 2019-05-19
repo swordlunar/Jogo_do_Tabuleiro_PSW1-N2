@@ -1,4 +1,6 @@
 		var cont = 1;
+		var countQuestao = 0;
+		var aux = 0;
 		var scorePlayer = new Array();
 		scorePlayer[0]=0;
 		scorePlayer[1]=0;
@@ -94,9 +96,17 @@ function sortearNumero(){
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
-			document.getElementById('jogar').disabled = true;
-			questao = Math.floor(Math.random() * 21 + 1);
-			questoesRespondidas += questao;
+			document.getElementById("rodar").disabled = true;
+			while(aux != 1){
+                questao = Math.floor(Math.random() * 21 + 1);
+                aux = 0;
+                if(questoesRespondidas.indexOf(questao) == -1 ){
+                	countQuestao++;
+                   questoesRespondidas[countQuestao] = questao;
+                    aux = 1;
+                }
+            }
+	
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
@@ -123,8 +133,17 @@ function sortearNumero(){
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
-			questao = Math.floor(Math.random() * 21 + 1);
-			questoesRespondidas += questao;
+			
+            while(aux != 1){
+                questao = Math.floor(Math.random() * 21 + 1);
+                aux = 0;
+                if(questoesRespondidas.indexOf(questao) == -1 ){
+                	countQuestao++;
+                   questoesRespondidas[countQuestao] = questao;
+                    aux = 1;
+                }
+            }
+
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
