@@ -3,6 +3,10 @@
 	src: url(xilosa.ttf);
 }
 
+p{
+	font-weight: bold;
+}
+
 .tabuleiro{
 	font-family: xilosa;
 	display: grid;
@@ -54,6 +58,8 @@
 	background-color: white;
 	margin-left: 5%;
 	margin-right: 5%;
+	width: 90%;
+	height: 35%;
 }
 .player0{
 	position: absolute;
