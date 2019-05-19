@@ -277,7 +277,7 @@ function questao6(passoAtual,pin,resposta){
 	alert(scorePlayer[pin]);
 }
 
-function questao1(passoAtual,pin,resposta){
+function questao7(passoAtual,pin,resposta){
 	
 	if (resposta == 1){
 		passoAtual += 2;
