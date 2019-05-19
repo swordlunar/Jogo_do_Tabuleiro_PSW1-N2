@@ -108,7 +108,7 @@ function sortearNumero(){
 			}
 			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')"> </input>');
 			
-			//scorePlayer[pin] = questaoM(scorePlayer[pin],pin,resposta);
+			
 		}
 
 		
@@ -134,12 +134,17 @@ function sortearNumero(){
     			
 			}
 			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')"> </input>');
+			
 		
-		//scorePlayer[pin] = questaoM(scorePlayer[pin],pin,resposta);
+		
 	}
 
 		
 }
+pegarPosição();
+
+}
+function pegarPosição(){
 	var posicao;
 	
 	if (scorePlayer[0]>scorePlayer[1])
@@ -149,7 +154,6 @@ function sortearNumero(){
 
 	mudarBackground(posicao);
 }
-
 function mover(passoAtual,pin){
 
 	if (passoAtual >= 36) {
@@ -253,8 +257,10 @@ function mudarBackground(posicao){
 		$('#pagina').css("backgroundColor","blue").fadeIn(10000);
 	else if (posicao>=24 && posicao<31) 
 		$('#pagina').css("backgroundColor","gray").fadeIn(10000);
-	else if (posicao>=31 && posicao<37) 
+	else if (posicao>=31 && posicao<32) 
 		$('#pagina').css("backgroundColor","green").fadeIn(10000);
+	else if (posicao>=33 && posicao<37) 
+		$('#pagina').css("backgroundColor","lightyellow").fadeIn(10000);
 
 }
 
