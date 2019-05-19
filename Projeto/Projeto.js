@@ -4,7 +4,29 @@ var scorePlayer1=0;
 		
 		var p = new Array();
 	    var r = new Array();
-
+ 		var opcoes = new Array(
+			["DO HUMANO MAIS ANTIGO","DA PRIMEIRA FLOR DO PLANETA","DE UM PEIXE COM 10000 MIL anos","DE UM ALIENIGENA"],
+			["O SOLDADINHO","CAMPINA","ROLINHA","CANCÃO"],
+			["FLORA","ARARI","FLORESTA ARARIPE","FLONA"],
+			["IFCE","UNILEÂO","UFCA","URCA"],
+			["CARIRIAÇU","CRATO","SANTANA DO CARIRI","MISSÃO VELHA"],
+			["CHAPADA DO ARARIPE","FLORESTA AMAZONIA","PARQUE ECOLOGICO","RIACHO DO MEIO"],
+			["A PADRE CICERO","BEATA MARIA DE ARAUJO","AOS ROMEIROS","A LAMPIÃO"],
+			["SANTANA DO CARIRI","JUAZEIRO DO NORTE","ARARIPE","BARBALHA"],
+			["LUZEIRO DE PADRE CICERO","LUZEIRO DOS ROMEIROS","LUZEIRO DO CARARI","LUZEIRO DO JUAZEIRO"],
+			["CRATO","SANTANA DO CARIRI","JUAZEIRO DO NORTE","FARIAS BRITO"],
+			["AOS CAMINHONEIROS","CENTENARIO DO CRATO","O ANIVERSÁRIO DE 250 ANOS DO CRATO","AOS ROMEIROS"],
+			["17 METROS","45 METROS","37 METROS","25 METROS"],
+			["JUAZEIRO DO NORTE","BARBALHA","CARIRIAÇU","CRATO"],
+			["SERRA DA MANTIQUEIRA","MONTES ALPES","SERRA DO MÃOZINHA","SERRA DO CATOLÉ"],
+			["MILAGRE DOS PÃES","PODER BÉLICO","MILAGRE DA HÓSTIA","BIGODE GRANDE"],
+			["JUAZEIRO DO NORTE","CRATO","MISSÃO VELHA","FARIAS BRITO"],
+			["PRAÇA PADRE CICERO","PRAÇA MONSENHOR HORÁCIO","PRAÇA DA REFESA","PRAÇA FRANCISCO ARRAIS MAIA"],
+			["IGREJA MATRIZ NOSSA SENHORA DAS DORES","IGREJA MATRIZ DE SÃO JOSÉ","IGREJA MATRIZ SANTO ANTÔNIO","CATEDRAL NOSSA SENHORA DA PENHA"],
+			["ARARIPE","PALMERINHA","FARIAS BRITO","BARBALHA"],
+			["SANTO ANTÔNIO","SÃO JOSÉ","SÃO JOÃO","SÃO PEDRO"],
+			["BANDEIRA DO BRASIL","BANDEIRA DO CEARÁ","BANDEIRA DA LIBERDADE","BANDEIRA DE SANTO ANTÔNIO"],
+		);
 	    // LISTA DE PERGUNTAS
 	    p[1] = "A Chapada do Araripe é conhecida como berço da paleontologia nacional, a qual possui como importante descoberta o fossil ______ , por exemplo.";
 	    r[1] = 'da primeira flor do planeta';
@@ -68,6 +90,20 @@ function sortearNumero(){
 		mover(scorePlayer0,numeroSorteado,pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
+		if (scorePlayer0 == 3 || scorePlayer0 == 8 || scorePlayer0 == 11 || scorePlayer0 == 16 || scorePlayer0 == 23 || scorePlayer0 == 30 || scorePlayer0 ==32) {
+			questao = Math.floor(Math.random() * 21 + 1);
+			questoesRespondidas += questao;
+			$("#pergunta").append('<p> '+p[questao]+ '</p>');
+			
+			for (i = 0; i < 4; i++) {
+    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			radioBtn.appendTo('#pergunta');
+    			if (i == 1){
+    				$('#pergunta').append('<br>');
+    			}
+			}
+			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
+			//$("#pergunta").append(questoesRespondidas);
 	}else{
 		var pin = 1;
 		scorePlayer1 += numeroSorteado;
@@ -76,6 +112,20 @@ function sortearNumero(){
 		mover(scorePlayer1,numeroSorteado,pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
+		if (scorePlayer1 == 3 || scorePlayer1 == 8 || scorePlayer1 == 11 || scorePlayer1 == 16 || scorePlayer1 == 23 || scorePlayer1 == 30 || scorePlayer1 ==32) {
+			questao = Math.floor(Math.random() * 21 + 1);
+			questoesRespondidas += questao;
+			$("#pergunta").append('<p> '+p[questao]+ '</p>');
+			
+			for (i = 0; i < 4; i++) {
+    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			radioBtn.appendTo('#pergunta');
+    			if (i == 1){
+    				$('#pergunta').append('<br>');
+    			}
+			}
+			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
+			//$("#pergunta").append(questoesRespondidas);
 
 	}
 	var posicao;
