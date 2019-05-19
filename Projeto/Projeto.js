@@ -142,10 +142,10 @@ function sortearNumero(){
 }
 	var posicao;
 	
-	if (scorePlayer[pin]>scorePlayer[pin])
-		posicao = scorePlayer[pin];
+	if (scorePlayer[0]>scorePlayer[1])
+		posicao = scorePlayer[0];
 	else
-		posicao = scorePlayer[pin];
+		posicao = scorePlayer[1];
 
 	mudarBackground(posicao);
 }
@@ -168,14 +168,69 @@ function mover(passoAtual,pin){
 	
 	
 }
+function questoes(passoAtual,pin,resposta){
 
-function questao1(passoAtual,pin,resposta){
+	switch(passoAtual)
+	{
+
+	case 3:
+		if (resposta == 1){
+			passoAtual += 3;
+		}else{
+			passoAtual -= 3;
+		}
+	break;
 	
-	if (resposta == 1){
-		passoAtual += 3;
-	}else{
-		passoAtual -= 3;
+	case 8:
+		if (resposta == 1){
+			passoAtual += 1;
+		}else{
+			passoAtual -= 1;
+		}
+	break;
+
+	case 11:
+		if (resposta == 1){
+			passoAtual += 3;
+		}else{
+			passoAtual -= 2;
+		}
+	break;
+
+	case 16:
+		if (resposta == 1){
+			passoAtual += 2;
+		}else{
+			passoAtual -= 3;
+		}
+	break;
+
+	case 23:
+		if (resposta == 1){
+			passoAtual += 4;
+		}else{
+			passoAtual -= 1;
+		}
+	break;
+
+	case 30:
+		if (resposta == 1){
+			passoAtual += 0;
+		}else{
+			passoAtual -= 6;
+		}
+	break;
+
+	case 32:
+		if (resposta == 1){
+			passoAtual += 2;
+		}else{
+			passoAtual -= 0;
+		}
+	break;
+
 	}
+
 	var coordenada = $("#Pos"+passoAtual+"").offset();
 
 	$(".player"+pin+"").animate({
@@ -184,115 +239,6 @@ function questao1(passoAtual,pin,resposta){
 	}, 2000);
 
 	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
-}
-
-function questao2(passoAtual,pin,resposta){
-	
-	if (resposta == 1){
-		passoAtual += 1;
-	}else{
-		passoAtual -= 1;
-	}
-	var coordenada = $("#Pos"+passoAtual+"").offset();
-
-	$(".player"+pin+"").animate({
-		top: coordenada.top,
-		left:coordenada.left,
-	}, 2000);
-
-	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
-}
-
-function questao3(passoAtual,pin,resposta){
-	
-	if (resposta == 1){
-		passoAtual += 3;
-	}else{
-		passoAtual -= 2;
-	}
-	var coordenada = $("#Pos"+passoAtual+"").offset();
-
-	$(".player"+pin+"").animate({
-		top: coordenada.top,
-		left:coordenada.left,
-	}, 2000);
-
-	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
-}
-
-function questao4(passoAtual,pin,resposta){
-	
-	if (resposta == 1){
-		passoAtual += 2;
-	}else{
-		passoAtual -= 3;
-	}
-	var coordenada = $("#Pos"+passoAtual+"").offset();
-
-	$(".player"+pin+"").animate({
-		top: coordenada.top,
-		left:coordenada.left,
-	}, 2000);
-
-	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
-}
-
-function questao5(passoAtual,pin,resposta){
-	
-	if (resposta == 1){
-		passoAtual += 4;
-	}else{
-		passoAtual -= 1;
-	}
-	var coordenada = $("#Pos"+passoAtual+"").offset();
-
-	$(".player"+pin+"").animate({
-		top: coordenada.top,
-		left:coordenada.left,
-	}, 2000);
-
-	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
-}
-
-function questao6(passoAtual,pin,resposta){
-	
-	if (resposta == 1){
-		passoAtual += 0;
-	}else{
-		passoAtual -= 6;
-	}
-	var coordenada = $("#Pos"+passoAtual+"").offset();
-
-	$(".player"+pin+"").animate({
-		top: coordenada.top,
-		left:coordenada.left,
-	}, 2000);
-
-	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
-}
-
-function questao7(passoAtual,pin,resposta){
-	
-	if (resposta == 1){
-		passoAtual += 2;
-	}else{
-		passoAtual -= 0;
-	}
-	var coordenada = $("#Pos"+passoAtual+"").offset();
-
-	$(".player"+pin+"").animate({
-		top: coordenada.top,
-		left:coordenada.left,
-	}, 2000);
-
-	scorePlayer[pin]=passoAtual;
-	alert(scorePlayer[pin]);
 }
 
 function mudarBackground(posicao){
@@ -316,9 +262,10 @@ function validarResposta(opcaoCorreta,pin){
  	var solucao = getRadioValor('rbtnCount');
  	if (r[opcaoCorreta] == solucao) {
  		alert('O valor selecionado está correto!!!');
- 		questao1(scorePlayer[pin],pin,1);
+ 		questoes(scorePlayer[pin],pin,1);
  	}else{
  		alert('O valor selecionado está errado!!');
+ 		questoes(scorePlayer[pin],pin,0);
 
  	}
 
