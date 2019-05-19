@@ -66,12 +66,16 @@ function sortearNumero(){
 		scorePlayer0 = eval(scorePlayer0);
 		document.getElementById("IpPassoAtual").value = scorePlayer0;
 		mover(scorePlayer0,numeroSorteado,pin);
+		$("#jogadorAtual").html(' ');
+		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
 	}else{
 		var pin = 1;
 		scorePlayer1 += numeroSorteado;
 		scorePlayer1 = eval(scorePlayer1);
 		document.getElementById("IpPassoAtual").value = scorePlayer1;
 		mover(scorePlayer1,numeroSorteado,pin);
+		$("#jogadorAtual").html(' ');
+		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
 	}
 
 
