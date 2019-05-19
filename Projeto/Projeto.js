@@ -31,47 +31,47 @@ var scorePlayer1=0;
 		);
 	    // LISTA DE PERGUNTAS
 	    p[1] = "A Chapada do Araripe é conhecida como berço da paleontologia nacional, a qual possui como importante descoberta o fossil ______ , por exemplo.";
-	    r[1] = 'da primeira flor do planeta';
+	    r[1] = 'DA PRIMEIRA FLOR DO PLANETA';
 	    p[2] = "Uma Ave caracteristica do Geoparque do Araripe é ______ - do - Araripe.";
-	    r[2] = 'o Soldadinho';
+	    r[2] = 'O SOLDADINHO';
 	    p[3] = "A primeira Floresta Nacional do Brasil foi criada na Chapada do Araripe, sendo conhecida como:";
 	    r[3] = 'FLONA';
 	    p[4] = "O Museu de Paleontologia de Santana do Cariri, foi fundado e inaugurado no dia 26 de julho de 1988, data esta que marca a sua doação por contrato de comodato a uma instituição de ensino da região, adicionando o nome da mesma ao nome do Museu. Qual a instituição de ensino responsável por administrar esse museu?";
 	    r[4] = 'URCA';
 	    p[5] = "O Museu de Paleontologia da região do cariri fica situado em qual cidade?";
-	    r[5] = 'Santana do Cariri';
+	    r[5] = 'SANTANA DO CARIRI';
 	    p[6] = "O Museu de Paleontologia da região do cariri é responsável por projetos de escavações permanantes na:";
-	    r[6] = 'Chapada do Araripe';
+	    r[6] = 'CHAPADA DO ARARIPE';
 	    p[7] = "O Luzeiro da Fé é uma torre de 113 metros de altura e foi concebido como uma homenagem:";
-	    r[7] = 'aos Romeiros';
+	    r[7] = 'AOS ROMEIROS';
 	    p[8] = "Em qual cidade fica localizado o Luzeiro da Fé?";
-	    r[8] = 'Juazeiro do Norte';
+	    r[8] = 'JUAZEIRO DO NORTE';
 	    p[9] = "O Luzeiro da Fé também é conhecido como:";
-	    r[9] = 'Luzeiro do Cariri';
+	    r[9] = 'LUZEIRO DO CARIRI';
 	    p[10] = "A estatua de Nossa Senhora de Fátima está situada em qual cidade do cariri?";
-	    r[10] = 'Crato';
+	    r[10] = 'CRATO';
 	    p[11] = "O monumento de Nossa Senhora de Fátima foi feito em homenagem a:"
-	    r[11] = 'O Aniversário de 250 anos do Crato';
+	    r[11] = 'O ANIVERSÁRIO DE 250 ANOS DO CRATO';
 	    p[12] = "A estatua de Nossa Senhora de Fátima é considerado um dos maioiores monumentos do Brasil, sendo maior até que o monumento do Cristo Redentor. Qual o tamanho dessa estatua?"
-	    r[12] = '45 Metros';
+	    r[12] = '45 METROS';
 	    p[13] = "O monumento (estatua) em homenagem a Padre Cicero Romão Batista está localizada em qual cidade?"
-	    r[13] = 'Juazeiro do Norte';
+	    r[13] = 'JUAZEIRO DO NORTE';
 	    p[14] = "A estatua do Padre Cicero foi inaugurada no dia 1° de 1969, no alto da colina do horto, ou como é conhecida:"
-	    r[14] = 'Serra do Catolé';
+	    r[14] = 'SERRA DO CATOLÉ';
 	    p[15] = "A estatua do Padre Cicero foi criada em homenagem ao grande lider religioso e politico da região do cariri, o qual é conhecido pelo:"
-	    r[15] = 'Milagre da Hóstia';
+	    r[15] = 'MILAGRE DA HÓSTIA';
 	    p[16] = "A Igreja Matriz de São José foi nomeada em nome do padroeiro de uma cidade do cariri. Qual o nome dessa cidade?"
-	    r[16] = 'Missão Velha';
+	    r[16] = 'MISSÃO VELHA';
 	    p[17] = "A Igreja Matriz de São José de Missão Velha está localizada na praça principal de sua cidade. Qual o nome dessa praça?"
-	    r[17] = 'Praça Monsenhor Horácio';
+	    r[17] = 'PRAÇA MONSENHOR HORÁCIO';
 	    p[18] = "O Primeiro templo catolico da região do cariri foi construido em 1725 pelos portugueses, o qual recebeu o nome de:"
-	    r[18] = 'Igreja Matriz de São José';
+	    r[18] = 'IGREJA MATRIZ DE SÃO JOSÉ';
 	    p[19] = "A festa do 'Pau da Bandeira', festividade anual popular da região do cariri, é realizada em qual cidade?"
-	    r[19] = 'Barbalha';
+	    r[19] = 'BARBALHA';
 	    p[20] = "A festa do 'Pau da Bandeira', festividade anual popular da região do cariri, é dedicada ao Santo Padroeiro de Barbalha. Qual o nome desse Santo?"
-	    r[20] = 'Santo Antonio';
+	    r[20] = 'SANTO ANTÔNIO';
 	    p[21] = "A festa do Santo Antonio de Barbalha, tem como principal atração a derrubada e transporte de um tronco que servirá como 'Pau da Bandeira'. Qual a Bandeira hasteada nessa comemoração?"
-	    r[21] = 'Bandeira de Santo Antonio';
+	    r[21] = 'BANDEIRA DE SANTO ANTÔNIO';
 
 function sortearNumero(){
 	var passoAtual=0;
@@ -99,14 +99,14 @@ function sortearNumero(){
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao-1][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
     			if (i == 1){
     				$('#pergunta').append('<br>');
     			}
+
 			}
-			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
-			//$("#pergunta").append(questoesRespondidas);
+			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+')"> </input>');
 		}
 		questaoM(scorePlayer0,pin,resposta);
 	}else{
@@ -123,14 +123,14 @@ function sortearNumero(){
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao-1][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
     			if (i == 1){
     				$('#pergunta').append('<br>');
     			}
+    			
 			}
-			//$("#pergunta").append('<form><input type="radio" name="respostas" value="'+o[1]+'"> '+o[1]'<input type="radio" name="respostas" value="'+o[2]+'">'+o[2]+'<input type="radio" name="respostas" value="'+o[3]+'">'+o[3]+'<input type="radio" name="respostas" value="'+o[4]+'">'+o[4]+'</form>'); 
-			//$("#pergunta").append(questoesRespondidas);
+			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+')"> </input>');
 		
 	}
 
@@ -194,4 +194,28 @@ function mudarBackground(posicao){
 		$('#pagina').css("backgroundColor","green").fadeIn(10000);
 
 }
+
+function validarResposta(opcaoCorreta){
+ 	var solucao = getRadioValor('rbtnCount');
+ 	if (r[opcaoCorreta] == solucao) {
+ 		alert('O valor selecionado está correto!!!');
+ 	}else{
+ 		alert('O valor selecionado está errado!!');
+ 	}
+
+  	$('#pergunta').html('<body style = "background-image: url("duvid.jpg");> </body> ');
+ }
+  
+ function getRadioValor(name){
+  var rads = document.getElementsByName(name);
+   
+  for(var i = 0; i < rads.length; i++){
+   if(rads[i].checked){
+    return rads[i].value;
+   }
+   
+  }
+   
+  return null;
+ }
 
