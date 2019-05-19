@@ -105,7 +105,6 @@ function mover(passoAtual,numeroSorteado,pin){
 		left:coordenada.left,
 	}, 2000);
 	
-	mudarBackground(passoAtual);
 
 }
 
