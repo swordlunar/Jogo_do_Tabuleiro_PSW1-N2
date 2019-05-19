@@ -158,7 +158,7 @@ function mover(passoAtual,pin){
 
 	if (passoAtual >= 36) {
 		var coordenada = $("#Pos36").offset();
-		alert("Voçê Ganhou");
+		ganhou(pin);
 
 	}else{
 		var coordenada = $("#Pos"+passoAtual+"").offset();
@@ -262,6 +262,13 @@ function mudarBackground(posicao){
 	else if (posicao>=33 && posicao<37) 
 		$('#pagina').css("backgroundColor","lightyellow").fadeIn(10000);
 
+}
+
+function ganhou(pin){
+	pin +=1;
+	$(".venceu").fadeIn(800);
+	$(".interna h4").text('Você venceu!');
+	$(".interna p").text('Jogador '+pin+'');
 }
 
 function validarResposta(opcaoCorreta,pin){
