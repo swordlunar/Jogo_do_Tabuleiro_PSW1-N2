@@ -108,7 +108,7 @@ function sortearNumero(){
 			}
 			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+')"> </input>');
 		}
-		questaoM(scorePlayer0,pin,resposta);
+		scorePlayer0 = questaoM(scorePlayer0,pin,resposta);
 	}else{
 		var pin = 1;
 		scorePlayer1 += numeroSorteado;
@@ -134,7 +134,7 @@ function sortearNumero(){
 		
 	}
 
-	questaoM(scorePlayer1,pin,resposta);
+	scorePlayer1 = questaoM(scorePlayer1,pin,resposta);
 }
 	var posicao;
 	
@@ -176,6 +176,8 @@ function questaoM(passoAtual,pin,resposta){
 		top: coordenada.top,
 		left:coordenada.left,
 	}, 2000);
+
+	return passoAtual;
 }
 
 function mudarBackground(posicao){
