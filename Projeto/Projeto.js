@@ -76,16 +76,16 @@ function sortearNumero(){
 		mover(scorePlayer1,numeroSorteado,pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
+
 	}
-
-
-
-	//document.getElementById("IpPassoAtual").value = passoAtual;
-
+	var posicao;
 	
+	if (scorePlayer0>scorePlayer1)
+		posicao = scorePlayer0;
+	else
+		posicao = scorePlayer1;
 
-
-
+	mudarBackground(posicao);
 }
 
 function mover(passoAtual,numeroSorteado,pin){
@@ -104,6 +104,25 @@ function mover(passoAtual,numeroSorteado,pin){
 		top: coordenada.top,
 		left:coordenada.left,
 	}, 2000);
+	
+	mudarBackground(passoAtual);
+
+}
+
+function mudarBackground(posicao){
+
+	if (posicao>=3 && posicao<8) 
+		$('#pagina').css("backgroundColor","yellow").fadeIn(10000);
+	else if (posicao>=8 && posicao<11) 
+		$('#pagina').css("backgroundColor","red").fadeIn(10000);
+	else if (posicao>=11 && posicao<17) 
+		$('#pagina').css("backgroundColor","pink").fadeIn(10000);
+	else if (posicao>=17 && posicao<24) 
+		$('#pagina').css("backgroundColor","blue").fadeIn(10000);
+	else if (posicao>=24 && posicao<31) 
+		$('#pagina').css("backgroundColor","gray").fadeIn(10000);
+	else if (posicao>=31 && posicao<37) 
+		$('#pagina').css("backgroundColor","green").fadeIn(10000);
 
 }
 
