@@ -94,6 +94,7 @@ function sortearNumero(){
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
+			document.getElementById('jogar').disabled = true;
 			questao = Math.floor(Math.random() * 21 + 1);
 			questoesRespondidas += questao;
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
@@ -121,6 +122,7 @@ function sortearNumero(){
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
+			document.getElementById("rodar").disabled = true;
 			questao = Math.floor(Math.random() * 21 + 1);
 			questoesRespondidas += questao;
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
@@ -243,6 +245,7 @@ function questoes(passoAtual,pin,resposta){
 	}, 2000);
 
 	scorePlayer[pin]=passoAtual;
+	document.getElementById("rodar").disabled = false;
 }
 
 function mudarBackground(posicao){
