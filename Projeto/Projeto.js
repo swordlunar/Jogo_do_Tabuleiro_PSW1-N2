@@ -1,6 +1,7 @@
-var cont = 1;
-var scorePlayer0=0;
-var scorePlayer1=0;
+		var cont = 1;
+		var scorePlayer = new Array();
+		scorePlayer[0]=0;
+		scorePlayer[1]=0;
 		var questoesRespondidas = new Array();
 		var p = new Array();
 	    var r = new Array();
@@ -75,7 +76,6 @@ var scorePlayer1=0;
 
 function sortearNumero(){
 	var passoAtual=0;
-	var resposta = 0;
 
 	cont ++;
 	
@@ -87,13 +87,13 @@ function sortearNumero(){
 
 	if (cont % 2 == 0) {
 		var pin = 0;
-		scorePlayer0 += numeroSorteado;
-		scorePlayer0 = eval(scorePlayer0);
-		document.getElementById("IpPassoAtual").value = scorePlayer0;
-		mover(scorePlayer0,pin);
+		scorePlayer[pin] += numeroSorteado;
+		scorePlayer[pin] = eval(scorePlayer[pin]);
+		document.getElementById("IpPassoAtual").value = scorePlayer[pin];
+		mover(scorePlayer[pin],pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
-		if (scorePlayer0 == 3 || scorePlayer0 == 8 || scorePlayer0 == 11 || scorePlayer0 == 16 || scorePlayer0 == 23 || scorePlayer0 == 30 || scorePlayer0 ==32) {
+		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			questao = Math.floor(Math.random() * 21 + 1);
 			questoesRespondidas += questao;
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
@@ -106,18 +106,21 @@ function sortearNumero(){
     			}
 
 			}
-			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+')"> </input>');
+			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')"> </input>');
+			
+			//scorePlayer[pin] = questaoM(scorePlayer[pin],pin,resposta);
 		}
-		scorePlayer0 = questaoM(scorePlayer0,pin,resposta);
+
+		
 	}else{
 		var pin = 1;
-		scorePlayer1 += numeroSorteado;
-		scorePlayer1 = eval(scorePlayer1);
-		document.getElementById("IpPassoAtual").value = scorePlayer1;
-		mover(scorePlayer1,pin);
+		scorePlayer[pin] += numeroSorteado;
+		scorePlayer[pin] = eval(scorePlayer[pin]);
+		document.getElementById("IpPassoAtual").value = scorePlayer[pin];
+		mover(scorePlayer[pin],pin);
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
-		if (scorePlayer1 == 3 || scorePlayer1 == 8 || scorePlayer1 == 11 || scorePlayer1 == 16 || scorePlayer1 == 23 || scorePlayer1 == 30 || scorePlayer1 ==32) {
+		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			questao = Math.floor(Math.random() * 21 + 1);
 			questoesRespondidas += questao;
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
@@ -130,18 +133,19 @@ function sortearNumero(){
     			}
     			
 			}
-			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+')"> </input>');
+			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')"> </input>');
 		
+		//scorePlayer[pin] = questaoM(scorePlayer[pin],pin,resposta);
 	}
 
-	scorePlayer1 = questaoM(scorePlayer1,pin,resposta);
+		
 }
 	var posicao;
 	
-	if (scorePlayer0>scorePlayer1)
-		posicao = scorePlayer0;
+	if (scorePlayer[pin]>scorePlayer[pin])
+		posicao = scorePlayer[pin];
 	else
-		posicao = scorePlayer1;
+		posicao = scorePlayer[pin];
 
 	mudarBackground(posicao);
 }
@@ -167,8 +171,8 @@ function mover(passoAtual,pin){
 
 function questaoM(passoAtual,pin,resposta){
 	
-	if (resposta == 0){
-		passoAtual -= 2;
+	if (resposta == 1){
+		passoAtual += 2;
 	}
 	var coordenada = $("#Pos"+passoAtual+"").offset();
 
@@ -177,7 +181,8 @@ function questaoM(passoAtual,pin,resposta){
 		left:coordenada.left,
 	}, 2000);
 
-	return passoAtual;
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
 }
 
 function mudarBackground(posicao){
@@ -197,15 +202,19 @@ function mudarBackground(posicao){
 
 }
 
-function validarResposta(opcaoCorreta){
+function validarResposta(opcaoCorreta,pin){
  	var solucao = getRadioValor('rbtnCount');
  	if (r[opcaoCorreta] == solucao) {
  		alert('O valor selecionado está correto!!!');
+ 		questaoM(scorePlayer[pin],pin,1);
  	}else{
  		alert('O valor selecionado está errado!!');
+
  	}
 
   	$('#pergunta').html('<body style = "background-image: url("duvid.jpg");> </body> ');
+
+
  }
   
  function getRadioValor(name){
