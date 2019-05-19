@@ -169,10 +169,120 @@ function mover(passoAtual,pin){
 	
 }
 
-function questaoM(passoAtual,pin,resposta){
+function questao1(passoAtual,pin,resposta){
+	
+	if (resposta == 1){
+		passoAtual += 3;
+	}else{
+		passoAtual -= 3;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
+
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
+}
+
+function questao2(passoAtual,pin,resposta){
+	
+	if (resposta == 1){
+		passoAtual += 1;
+	}else{
+		passoAtual -= 1;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
+
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
+}
+
+function questao3(passoAtual,pin,resposta){
+	
+	if (resposta == 1){
+		passoAtual += 3;
+	}else{
+		passoAtual -= 2;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
+
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
+}
+
+function questao4(passoAtual,pin,resposta){
 	
 	if (resposta == 1){
 		passoAtual += 2;
+	}else{
+		passoAtual -= 3;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
+
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
+}
+
+function questao5(passoAtual,pin,resposta){
+	
+	if (resposta == 1){
+		passoAtual += 4;
+	}else{
+		passoAtual -= 1;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
+
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
+}
+
+function questao6(passoAtual,pin,resposta){
+	
+	if (resposta == 1){
+		passoAtual += 0;
+	}else{
+		passoAtual -= 6;
+	}
+	var coordenada = $("#Pos"+passoAtual+"").offset();
+
+	$(".player"+pin+"").animate({
+		top: coordenada.top,
+		left:coordenada.left,
+	}, 2000);
+
+	scorePlayer[pin]=passoAtual;
+	alert(scorePlayer[pin]);
+}
+
+function questao1(passoAtual,pin,resposta){
+	
+	if (resposta == 1){
+		passoAtual += 2;
+	}else{
+		passoAtual -= 0;
 	}
 	var coordenada = $("#Pos"+passoAtual+"").offset();
 
@@ -206,7 +316,7 @@ function validarResposta(opcaoCorreta,pin){
  	var solucao = getRadioValor('rbtnCount');
  	if (r[opcaoCorreta] == solucao) {
  		alert('O valor selecionado está correto!!!');
- 		questaoM(scorePlayer[pin],pin,1);
+ 		questao1(scorePlayer[pin],pin,1);
  	}else{
  		alert('O valor selecionado está errado!!');
 
