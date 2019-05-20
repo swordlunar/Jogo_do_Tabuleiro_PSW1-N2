@@ -97,15 +97,17 @@ function sortearNumero(){
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
+			
 			while(aux != 1){
                 questao = Math.floor(Math.random() * 21 + 1);
                 aux = 0;
                 if(questoesRespondidas.indexOf(questao) == -1 ){
                 	countQuestao++;
-                   questoesRespondidas[countQuestao] = questao;
+                    questoesRespondidas[countQuestao] = questao;
                     aux = 1;
                 }
             }
+            aux = 0;
 	
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
@@ -143,6 +145,7 @@ function sortearNumero(){
                     aux = 1;
                 }
             }
+            aux = 0;
 
 			$("#pergunta").append('<p> '+p[questao]+ '</p>');
 			
