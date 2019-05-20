@@ -109,7 +109,8 @@ function sortearNumero(){
             }
             aux = 0;
 	
-			$("#pergunta").append('<p> '+p[questao]+ '</p>');
+			$("#pergunta").css('background-image', 'none');
+			$("#pergunta").html('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
     			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
@@ -147,7 +148,8 @@ function sortearNumero(){
             }
             aux = 0;
 
-			$("#pergunta").append('<p> '+p[questao]+ '</p>');
+			$("#pergunta").css('background-image', 'none');
+			$("#pergunta").html('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
     			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
@@ -307,7 +309,8 @@ function validarResposta(opcaoCorreta,pin){
 
  	}
 
-  	$('#pergunta').html('<body style = "background-image: url("duvid.jpg");> </body> ');
+  	$('#pergunta').html('');
+  	$("#pergunta").css('background-image', 'url(perguntas.svg)');
 
 
  }
