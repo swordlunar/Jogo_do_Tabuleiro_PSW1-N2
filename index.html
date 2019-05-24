@@ -6,15 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="Projeto.css">
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="Projeto.js"></script>
-	<link rel="stylesheet" type="text/css" href="jquery-3.4.1.js">
-	<link rel="stylesheet" type="text/css" href="jquery-3.4.1.slim.js">
-
 </head>
 <body style="font-size: 5vw;" id="pagina">
 		<div class="tabuleiro" align="center">
 			<div class="Pos0" id="Pos0">Largada</div>
-			<div class="player0"></div>
-			<div class="player1"></div>
+			<div class="player0"><img src="player0.svg" style="height: 8vw; width: auto; top: -1.5vw; left: 300%; position: relative;"></div>
+			<div class="player1"><img src="player1.svg" style="height: 8vw; width: auto; top: -1.43vw; left: -60%; position: relative;"></div>
 
 			<div class="Pos1" id="Pos1">1</div>
 			<div class="Pos2" id="Pos2">2</div>
@@ -69,9 +66,8 @@
 		</div>
 
 		<div class="main">
-			<div class="logo"> <h1>&</h1> </div>
-			<h1>A Trilha do Cariri</h1>
-			<div id="jogadorAtual"> </div>
+			<div class="logo"></div>
+			<div id="jogadorAtual" style="font-size: 1.5vw; margin-top: -6%;"> <h1 style="color: green;">Clique em Jogar</h1> </div>
 			<div class="perguntas" id="pergunta"> </div>
 			<center>
 				<button onclick="sortearNumero();" id="rodar">Jogar</button>
@@ -82,7 +78,7 @@
 
 		<div class="venceu" align="center">
 			<div class="interna">
-				<h4></h4>
+				<h4>Vez do Jogador 1</h4>
 				<p></p>
 				<button onclick="window.location.reload();">Reinicie o Jogo</button>
 			</div>

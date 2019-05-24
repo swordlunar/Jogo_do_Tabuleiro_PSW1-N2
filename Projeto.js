@@ -109,10 +109,11 @@ function sortearNumero(){
             }
             aux = 0;
 	
-			$("#pergunta").append('<p> '+p[questao]+ '</p>');
+			$("#pergunta").css('background-image', 'none');
+			$("#pergunta").html('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
     			if (i == 1){
     				$('#pergunta').append('<br>');
@@ -147,10 +148,11 @@ function sortearNumero(){
             }
             aux = 0;
 
-			$("#pergunta").append('<p> '+p[questao]+ '</p>');
+			$("#pergunta").css('background-image', 'none');
+			$("#pergunta").html('<p> '+p[questao]+ '</p>');
 			
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
     			if (i == 1){
     				$('#pergunta').append('<br>');
@@ -273,19 +275,19 @@ function questoes(passoAtual,pin,resposta){
 function mudarBackground(posicao){
 
 	if (posicao>=3 && posicao<8) 
-		$('#pagina').css("backgroundColor","yellow").fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image1.jpg)').fadeIn(10000);
 	else if (posicao>=8 && posicao<11) 
-		$('#pagina').css("backgroundColor","red").fadeIn(10000);
-	else if (posicao>=11 && posicao<17) 
-		$('#pagina').css("backgroundColor","pink").fadeIn(10000);
-	else if (posicao>=17 && posicao<24) 
-		$('#pagina').css("backgroundColor","blue").fadeIn(10000);
-	else if (posicao>=24 && posicao<31) 
-		$('#pagina').css("backgroundColor","gray").fadeIn(10000);
-	else if (posicao>=31 && posicao<32) 
-		$('#pagina').css("backgroundColor","green").fadeIn(10000);
-	else if (posicao>=33 && posicao<37) 
-		$('#pagina').css("backgroundColor","lightyellow").fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image2.jpg)').fadeIn(10000);
+	else if (posicao>=11 && posicao<16) 
+		$('#pagina').css('background-image', 'url(image3.jpg)').fadeIn(10000);
+	else if (posicao>=16 && posicao<23) 
+		$('#pagina').css('background-image', 'url(image4.jpg)').fadeIn(10000);
+	else if (posicao>=23 && posicao<30) 
+		$('#pagina').css('background-image', 'url(image5.jpg)').fadeIn(10000);
+	else if (posicao>=30 && posicao<32) 
+		$('#pagina').css('background-image', 'url(image6.jpg)').fadeIn(10000);
+	else if (posicao>=32 && posicao<37) 
+		$('#pagina').css('background-image', 'url(image7.jpg)').fadeIn(10000);
 
 }
 
@@ -307,7 +309,8 @@ function validarResposta(opcaoCorreta,pin){
 
  	}
 
-  	$('#pergunta').html('<body style = "background-image: url("duvid.jpg");> </body> ');
+  	$('#pergunta').html('');
+  	$("#pergunta").css('background-image', 'url(perguntas.svg)');
 
 
  }
