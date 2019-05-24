@@ -206,67 +206,86 @@ function questoes(passoAtual,pin,resposta){
 	case 3:
 		if (resposta == 1){
 			passoAtual += 3;
+			acertou(3);
 		}else{
 			passoAtual -= 3;
+			errou(3);
 		}
 	break;
 	
 	case 8:
 		if (resposta == 1){
 			passoAtual += 1;
+			acertou(1);
 		}else{
 			passoAtual -= 1;
+			errou(1);
 		}
 	break;
 
 	case 11:
 		if (resposta == 1){
 			passoAtual += 3;
+			acertou(3);
 		}else{
 			passoAtual -= 2;
+			errou(2);
 		}
 	break;
 
 	case 16:
 		if (resposta == 1){
 			passoAtual += 2;
+			acertou(2);
 		}else{
 			passoAtual -= 3;
+			errou(3);
 		}
 	break;
 
 	case 23:
 		if (resposta == 1){
 			passoAtual += 4;
+			acertou(4);
 		}else{
 			passoAtual -= 1;
+			errou(1);
 		}
 	break;
 
 	case 30:
 		if (resposta == 1){
 			passoAtual += 0;
+			acertou(0);
 		}else{
 			passoAtual -= 6;
+			errou(6);
 		}
 	break;
 
 	case 32:
 		if (resposta == 1){
 			passoAtual += 2;
+			acertou(2);
 		}else{
 			passoAtual -= 0;
+			errou(0);
 		}
 	break;
 
 	}
 
+
 	var coordenada = $("#Pos"+passoAtual+"").offset();
 
-	$(".player"+pin+"").animate({
+	setTimeout( function(){
+
+		$(".player"+pin+"").animate({
 		top: coordenada.top,
 		left:coordenada.left,
 	}, 2000);
+
+	},4000);
 
 	scorePlayer[pin]=passoAtual;
 	document.getElementById("rodar").disabled = false;
@@ -297,14 +316,26 @@ function ganhou(pin){
 	$(".interna h4").text('Você venceu!');
 	$(".interna p").text('Jogador '+pin+'');
 }
+function acertou(casasAvançou){
+	$(".alertAcertou").fadeIn();
+	$(".alertAcertou").text('Acertou!!! Avançou '+casasAvançou+' casa(s)');
+	setTimeout(function () {
+  	$(".alertAcertou").hide('');
+	}, 3000);
+}
+function errou(casasVoltou){
+	$(".alertErrou").fadeIn();
+	$(".alertErrou").text('Errou!!! Voltou '+casasVoltou+' casa(s)');
+	setTimeout(function () {
+  	$(".alertErrou").hide('');
+	}, 3000);
+}
 
 function validarResposta(opcaoCorreta,pin){
  	var solucao = getRadioValor('rbtnCount');
  	if (r[opcaoCorreta] == solucao) {
- 		alert('O valor selecionado está correto!!!');
  		questoes(scorePlayer[pin],pin,1);
  	}else{
- 		alert('O valor selecionado está errado!!');
  		questoes(scorePlayer[pin],pin,0);
 
  	}

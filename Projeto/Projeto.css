@@ -66,7 +66,7 @@ p{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: 12;
+	z-index: 1000;
 	display: none;
 }
 .interna{
@@ -78,6 +78,35 @@ p{
 	display: block;
 	position: relative;
 	padding: 10px;
+	z-index: 1000;
+}
+.alertAcertou{
+	width: 35%;
+	height: 5%;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	padding: 20px;
+	border-radius: 2px;
+  	background-color: #DFF2BF;
+  	color: #4F8A10;
+  	font-size: 2.5vw;
+  	z-index: 1000;
+  	display: none;
+}
+.alertErrou{
+	width: 35%;
+	height: 5%;
+	position: absolute;
+	top:50%;
+	left: 30%;
+	padding: 20px;
+	border-radius: 2px;
+  	background-color: #FFD2D2;
+  	color: #D8000C;
+  	font-size: 2.5vw;
+  	z-index: 1000;
+  	display: none;
 }
 .perguntas{
 	font-family: Arial, Helvetica, sans-serif;
