@@ -110,6 +110,7 @@ function sortearNumero(){
 		//Verifica se o Jogador 01 está em um ponto turistico
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
+			setTimeout(function(){document.getElementById("rodar").disabled = true;}, 2101);
 			//sorteira uma das perguntas para o jogador 01 responder
 			while(aux != 1){
                 questao = Math.floor(Math.random() * 21 + 1);
@@ -153,6 +154,7 @@ function sortearNumero(){
 		// Verifica se o Jogador 02 está em um ponto turistico
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
+			setTimeout(function(){document.getElementById("rodar").disabled = true;}, 2101);
 			//Sorteia uma das perguntas para o Jogador 02 responder
             while(aux != 1){
                 questao = Math.floor(Math.random() * 21 + 1);
@@ -203,7 +205,7 @@ function pegarPosição(){
 
 //Função responsável pela movimentação e animação dos jogadores
 function mover(passoAtual,pin){
-	document.getElementById("rodar").disabled = true;
+	
 	if (passoAtual >= 36) {
 		var coordenada = $("#Pos36").offset();
 		ganhou(pin);
@@ -211,8 +213,11 @@ function mover(passoAtual,pin){
 	}else{
 		var coordenada = $("#Pos"+passoAtual+"").offset();
 	}
-	
 
+	if (passoAtual !=3 && passoAtual !=8 && passoAtual !=11 && passoAtual !=16 && passoAtual !=23 && passoAtual !=30 && passoAtual !=32) {
+		document.getElementById("rodar").disabled = true;
+	}
+	
 	$(".player"+pin+"").animate({
 		top: coordenada.top,
 		left:coordenada.left,
