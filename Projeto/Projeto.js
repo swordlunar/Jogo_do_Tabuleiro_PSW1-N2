@@ -106,7 +106,8 @@ function sortearNumero(){
 
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
-
+		$("#icon1").css('opacity', '1');
+		$("#icon2").css('opacity', '0.3');
 		//Verifica se o Jogador 01 está em um ponto turistico
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
@@ -151,6 +152,8 @@ function sortearNumero(){
 
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
+		$("#icon2").css('opacity', '1');
+		$("#icon1").css('opacity', '0.3');
 		// Verifica se o Jogador 02 está em um ponto turistico
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;

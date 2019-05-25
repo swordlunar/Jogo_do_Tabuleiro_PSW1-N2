@@ -71,18 +71,10 @@ h1{
 }
 
 .logo{
-	font-family: xilosa;
-	font-size: 5vw;
-	color: brown;
 	position: relative;
 	height: 24%;
 	width: 40%;
-	background-image: url(logo1.svg);
-	background-repeat: no-repeat;
-	background-size: cover;
 	left: 30%;
-
-
 }
 .venceu{
 	background-color: rgba(0,0,0,0.5);
