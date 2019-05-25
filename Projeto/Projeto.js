@@ -1,13 +1,20 @@
+		
+		//Variaveis Globais para auxiliar no tratamento das regras de negocio do jogo
 		var cont = 1;
 		var countQuestao = 0;
 		var aux = 0;
+		//Vetor responsável por guardar a posição dos jogadores
 		var scorePlayer = new Array();
 		scorePlayer[0]=0;
 		scorePlayer[1]=0;
+		//Vetor responsável por armazenar as questões que já foram utilizadas
 		var questoesRespondidas = new Array();
+		//vetor de perguntas
 		var p = new Array();
+		//vetor de respostas
 	    var r = new Array();
-	    //var o = new Array();
+
+	    //Lista de Opções na ordem das perguntas ... P[1] => opcoes[1] ... P[n] => opcoes[n];
  		var opcoes = new Array(
  			["Contingencia","Contingencia","Contingencia","Contingencia"],
 			["DO HUMANO MAIS ANTIGO","DA PRIMEIRA FLOR DO PLANETA","DE UM PEIXE COM 10000 MIL anos","DE UM ALIENIGENA"],
@@ -32,7 +39,7 @@
 			["SANTO ANTÔNIO","SÃO JOSÉ","SÃO JOÃO","SÃO PEDRO"],
 			["BANDEIRA DO BRASIL","BANDEIRA DO CEARÁ","BANDEIRA DA LIBERDADE","BANDEIRA DE SANTO ANTÔNIO"],
 		);
-	    // LISTA DE PERGUNTAS
+	    // Lista de Perguntas e Respostas
 	    p[1] = "A Chapada do Araripe é conhecida como berço da paleontologia nacional, a qual possui como importante descoberta o fossil ______ , por exemplo.";
 	    r[1] = 'DA PRIMEIRA FLOR DO PLANETA';
 	    p[2] = "Uma Ave caracteristica do Geoparque do Araripe é ______ - do - Araripe.";
@@ -76,28 +83,33 @@
 	    p[21] = "A festa do Santo Antonio de Barbalha, tem como principal atração a derrubada e transporte de um tronco que servirá como 'Pau da Bandeira'. Qual a Bandeira hasteada nessa comemoração?"
 	    r[21] = 'BANDEIRA DE SANTO ANTÔNIO';
 
+//Função responsável por organizar as principais funcionalidades do jogo ("Função Main")
 function sortearNumero(){
 	var passoAtual=0;
 
 	cont ++;
-	
+	//sorteia um numero entre 1 e 6 (Dado)
 	var numeroSorteado = (Math.floor(Math.random() * 6))+ 1;
 
-	document.getElementById("IpNumeroSorteado").value = numeroSorteado;
+	//document.getElementById("IpNumeroSorteado").value = numeroSorteado;
 
 	
-
+	//Bloco de Instruções executado na vez do Jogador 01
 	if (cont % 2 == 0) {
 		var pin = 0;
+		//Adiciona o valor sorteado do dado ao Jogador 01
 		scorePlayer[pin] += numeroSorteado;
 		scorePlayer[pin] = eval(scorePlayer[pin]);
-		document.getElementById("IpPassoAtual").value = scorePlayer[pin];
+		//document.getElementById("IpPassoAtual").value = scorePlayer[pin];
 		mover(scorePlayer[pin],pin);
+
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: blue;"> Vez do Jogador 01!</h1>');
+
+		//Verifica se o Jogador 01 está em um ponto turistico
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
-			
+			//sorteira uma das perguntas para o jogador 01 responder
 			while(aux != 1){
                 questao = Math.floor(Math.random() * 21 + 1);
                 aux = 0;
@@ -108,10 +120,10 @@ function sortearNumero(){
                 }
             }
             aux = 0;
-	
+			//adiciona a pergunta sorteada na div de perguntas
 			$("#pergunta").css('background-image', 'none');
 			$("#pergunta").html('<p> '+p[questao]+ '</p>');
-			
+			//Adiciona as alternativas da pergunta sorteada na div de perguntas
 			for (i = 0; i < 4; i++) {
     			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
@@ -120,23 +132,27 @@ function sortearNumero(){
     			}
 
 			}
+			//adiciona o botão responsável por chamar a função "validarResposta"
 			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input>');
 			
 			
 		}
 
-		
+	//Bloco de instruções executado na vez do Jogador 02
 	}else{
 		var pin = 1;
+		//Adiciona o valor sorteado do dado ao Jogador 01
 		scorePlayer[pin] += numeroSorteado;
 		scorePlayer[pin] = eval(scorePlayer[pin]);
-		document.getElementById("IpPassoAtual").value = scorePlayer[pin];
+		//document.getElementById("IpPassoAtual").value = scorePlayer[pin];
 		mover(scorePlayer[pin],pin);
+
 		$("#jogadorAtual").html(' ');
 		$("#jogadorAtual").append('<h1 style="color: red;"> Vez do Jogador 02!</h1>');
+		// Verifica se o Jogador 02 está em um ponto turistico
 		if (scorePlayer[pin] == 3 || scorePlayer[pin] == 8 || scorePlayer[pin] == 11 || scorePlayer[pin] == 16 || scorePlayer[pin] == 23 || scorePlayer[pin] == 30 || scorePlayer[pin] ==32) {
 			document.getElementById("rodar").disabled = true;
-			
+			//Sorteia uma das perguntas para o Jogador 02 responder
             while(aux != 1){
                 questao = Math.floor(Math.random() * 21 + 1);
                 aux = 0;
@@ -146,11 +162,12 @@ function sortearNumero(){
                     aux = 1;
                 }
             }
-            aux = 0;
 
+            aux = 0;
+            //adiciona a pergunta sorteada na div de perguntas
 			$("#pergunta").css('background-image', 'none');
 			$("#pergunta").html('<p> '+p[questao]+ '</p>');
-			
+			//Adiciona as alternativas da pergunta sorteada na div de perguntas
 			for (i = 0; i < 4; i++) {
     			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
     			radioBtn.appendTo('#pergunta');
@@ -159,6 +176,7 @@ function sortearNumero(){
     			}
     			
 			}
+			//adiciona o botão responsável por chamar a função "validarResposta"
 			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input>');
 			
 		
@@ -170,6 +188,7 @@ function sortearNumero(){
 pegarPosição();
 
 }
+//Função responsável por verificar se um jogador já passou por um ponto turistico
 function pegarPosição(){
 	var posicao;
 	
@@ -180,6 +199,8 @@ function pegarPosição(){
 
 	mudarBackground(posicao);
 }
+
+//Função responsável pela movimentação e animação dos jogadores
 function mover(passoAtual,pin){
 
 	if (passoAtual >= 36) {
@@ -198,11 +219,13 @@ function mover(passoAtual,pin){
 	
 	
 }
+
+//Fução responsável por atribuir as bonificações e penalidades, no acerto ou não de uma pergunta, para cada "ponto turistico"
 function questoes(passoAtual,pin,resposta){
 
 	switch(passoAtual)
 	{
-
+	//Para o Museu de Paleontologia
 	case 3:
 		if (resposta == 1){
 			passoAtual += 3;
@@ -212,7 +235,7 @@ function questoes(passoAtual,pin,resposta){
 			errou(3);
 		}
 	break;
-	
+	//Para a Chapada do Araripe
 	case 8:
 		if (resposta == 1){
 			passoAtual += 1;
@@ -222,7 +245,7 @@ function questoes(passoAtual,pin,resposta){
 			errou(1);
 		}
 	break;
-
+	//Para a Festa de Santo Antônio (Pau da Bandeira)
 	case 11:
 		if (resposta == 1){
 			passoAtual += 3;
@@ -232,7 +255,7 @@ function questoes(passoAtual,pin,resposta){
 			errou(2);
 		}
 	break;
-
+	//Para a Santa do Crato
 	case 16:
 		if (resposta == 1){
 			passoAtual += 2;
@@ -242,7 +265,7 @@ function questoes(passoAtual,pin,resposta){
 			errou(3);
 		}
 	break;
-
+	//Para a Igreja Matriz de São José
 	case 23:
 		if (resposta == 1){
 			passoAtual += 4;
@@ -252,7 +275,7 @@ function questoes(passoAtual,pin,resposta){
 			errou(1);
 		}
 	break;
-
+	//Para o Luzeiro da Fé
 	case 30:
 		if (resposta == 1){
 			passoAtual += 0;
@@ -262,7 +285,7 @@ function questoes(passoAtual,pin,resposta){
 			errou(6);
 		}
 	break;
-
+	//Para a Estatua do Padre Cicero
 	case 32:
 		if (resposta == 1){
 			passoAtual += 2;
@@ -275,7 +298,7 @@ function questoes(passoAtual,pin,resposta){
 
 	}
 
-
+	//Atribuição da penalidade ou bonificação a posição do jogador
 	var coordenada = $("#Pos"+passoAtual+"").offset();
 
 	setTimeout( function(){
@@ -291,8 +314,10 @@ function questoes(passoAtual,pin,resposta){
 	document.getElementById("rodar").disabled = false;
 }
 
+//Função responsável por alterar o background do tabuleiro dinamicamente
 function mudarBackground(posicao){
 
+//A mudança do background é dada de acordo ao último "ponto turistico" que foi ultrapassado
 	if (posicao>=3 && posicao<8) 
 		$('#pagina').css('background-image', 'url(image1.jpg)').fadeIn(500);
 	else if (posicao>=8 && posicao<11) 
@@ -310,12 +335,15 @@ function mudarBackground(posicao){
 
 }
 
+//Função responsável por "Alertar" o Jogador Vencedor do jogo
 function ganhou(pin){
 	pin +=1;
 	$(".venceu").fadeIn(800);
 	$(".interna h4").text('Você venceu!');
 	$(".interna p").text('Jogador '+pin+'');
 }
+
+//Função responsável por "Alertar" o número de casas a serem avançadas pelo jogador
 function acertou(casasAvançou){
 	$(".alertAcertou").fadeIn();
 	$(".alertAcertou").text('Acertou!!! Avançou '+casasAvançou+' casa(s)');
@@ -323,6 +351,8 @@ function acertou(casasAvançou){
   	$(".alertAcertou").hide('');
 	}, 3000);
 }
+
+//Função responsável por "Alertar" o número de casas a serem voltadas pelo jogador
 function errou(casasVoltou){
 	$(".alertErrou").fadeIn();
 	$(".alertErrou").text('Errou!!! Voltou '+casasVoltou+' casa(s)');
@@ -331,6 +361,7 @@ function errou(casasVoltou){
 	}, 3000);
 }
 
+//Função responsável por verificar se a opção marcada condiz com a resposta correta
 function validarResposta(opcaoCorreta,pin){
  	var solucao = getRadioValor('rbtnCount');
  	if (r[opcaoCorreta] == solucao) {
@@ -345,7 +376,8 @@ function validarResposta(opcaoCorreta,pin){
 
 
  }
-  
+
+ //Função Responsável por retornar o radio button (alternativa) selecionado para uma determinada pergunta 
  function getRadioValor(name){
   var rads = document.getElementsByName(name);
    
