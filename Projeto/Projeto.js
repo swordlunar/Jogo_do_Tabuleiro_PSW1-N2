@@ -120,7 +120,7 @@ function sortearNumero(){
     			}
 
 			}
-			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')"> </input>');
+			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input>');
 			
 			
 		}
@@ -159,7 +159,7 @@ function sortearNumero(){
     			}
     			
 			}
-			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')"> </input>');
+			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input>');
 			
 		
 		

@@ -12,6 +12,25 @@ p{
 	font-weight: bold;
 }
 
+
+.butn {
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: xilosa;
+  color: #ffffff;
+  font-size: 2vw;
+  background: #23bd07;
+  padding: 0.5vw 1.5vw 0.5vw 1.5vw;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #028c09;
+  text-decoration: none;
+}
+
+
 #pagina{
 	background: url('mapa.jpg') center center no-repeat fixed; 
 	-webkit-background-size: cover;
