@@ -294,19 +294,19 @@ function questoes(passoAtual,pin,resposta){
 function mudarBackground(posicao){
 
 	if (posicao>=3 && posicao<8) 
-		$('#pagina').css('background-image', 'url(image1.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image1.jpg)').fadeIn(500);
 	else if (posicao>=8 && posicao<11) 
-		$('#pagina').css('background-image', 'url(image2.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image2.jpg)').fadeIn(500);
 	else if (posicao>=11 && posicao<16) 
-		$('#pagina').css('background-image', 'url(image3.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image3.jpg)').fadeIn(500);
 	else if (posicao>=16 && posicao<23) 
-		$('#pagina').css('background-image', 'url(image4.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image4.jpg)').fadeIn(500);
 	else if (posicao>=23 && posicao<30) 
-		$('#pagina').css('background-image', 'url(image5.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image5.jpg)').fadeIn(500);
 	else if (posicao>=30 && posicao<32) 
-		$('#pagina').css('background-image', 'url(image6.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image6.jpg)').fadeIn(500);
 	else if (posicao>=32 && posicao<37) 
-		$('#pagina').css('background-image', 'url(image7.jpg)').fadeIn(10000);
+		$('#pagina').css('background-image', 'url(image7.jpg)').fadeIn(500);
 
 }
 
