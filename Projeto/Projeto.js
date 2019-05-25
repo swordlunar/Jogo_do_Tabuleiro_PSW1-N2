@@ -203,7 +203,7 @@ function pegarPosição(){
 
 //Função responsável pela movimentação e animação dos jogadores
 function mover(passoAtual,pin){
-
+	document.getElementById("rodar").disabled = true;
 	if (passoAtual >= 36) {
 		var coordenada = $("#Pos36").offset();
 		ganhou(pin);
@@ -217,7 +217,8 @@ function mover(passoAtual,pin){
 		top: coordenada.top,
 		left:coordenada.left,
 	}, 2000);
-	
+
+	setTimeout(function(){document.getElementById("rodar").disabled = false;}, 2100);
 	
 }
 
@@ -312,7 +313,8 @@ function questoes(passoAtual,pin,resposta){
 	},4000);
 
 	scorePlayer[pin]=passoAtual;
-	document.getElementById("rodar").disabled = false;
+	setTimeout(function(){document.getElementById("rodar").disabled = false;}, 6000);
+	
 }
 
 //Função responsável por alterar o background do tabuleiro dinamicamente
