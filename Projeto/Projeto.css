@@ -12,6 +12,9 @@ p{
 	font-weight: bold;
 }
 
+h1{
+	font-size: 2vw;
+}
 
 .butn {
   -webkit-border-radius: 13;
@@ -30,6 +33,10 @@ p{
   text-decoration: none;
 }
 
+.butn:disabled {
+  background: #004209;
+  text-decoration: none;
+}
 
 #pagina{
 	background: url('mapa.jpg') center center no-repeat fixed; 
@@ -87,10 +94,11 @@ p{
 	left: 0px;
 	z-index: 1000;
 	display: none;
+
 }
 .interna{
-	width: 700px;
-	height: 600px;
+	width: 45vw;
+	height: 40vw;
 	margin-top: 5%;
 	background-color: white;
 	border-radius: 15px;
@@ -134,12 +142,14 @@ p{
 	background-image: url(perguntas.svg); 
 	background-repeat: repeat;
 	margin-left: 5%;
-	margin-right: 5%;
-	width: 90%;
-	height: 35%;
+	margin-right: 3%;
+	width: 92%;
+	height: 39%;
 	overflow: auto;
 	position: relative; 
 	background-size: cover;
+	text-align: justify;
+
 }
 .player0{
 	position: absolute;

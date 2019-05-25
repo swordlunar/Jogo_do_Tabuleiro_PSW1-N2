@@ -90,7 +90,8 @@ function sortearNumero(){
 	cont ++;
 	//sorteia um numero entre 1 e 6 (Dado)
 	var numeroSorteado = (Math.floor(Math.random() * 6))+ 1;
-
+	$("#dadoSorteado").html('');
+	$("#dadoSorteado").append('<h1> Você tirou: '+numeroSorteado+ '<h1>');
 	//document.getElementById("IpNumeroSorteado").value = numeroSorteado;
 
 	
@@ -125,15 +126,15 @@ function sortearNumero(){
 			$("#pergunta").html('<p> '+p[questao]+ '</p>');
 			//Adiciona as alternativas da pergunta sorteada na div de perguntas
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input><br>');
     			radioBtn.appendTo('#pergunta');
-    			if (i == 1){
-    				$('#pergunta').append('<br>');
-    			}
+    			//if (i == 1){
+    			//	$('#pergunta').append('<br>');
+    			//}
 
 			}
 			//adiciona o botão responsável por chamar a função "validarResposta"
-			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input>');
+			$('#pergunta').append('<br><center><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input></center>');
 			
 			
 		}
@@ -169,15 +170,15 @@ function sortearNumero(){
 			$("#pergunta").html('<p> '+p[questao]+ '</p>');
 			//Adiciona as alternativas da pergunta sorteada na div de perguntas
 			for (i = 0; i < 4; i++) {
-    			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input>');
+    			var radioBtn = $('<input type="radio" class="radio" name="rbtnCount" value="'+opcoes[questao][i]+'">'+opcoes[questao][i]+' </input><br>');
     			radioBtn.appendTo('#pergunta');
-    			if (i == 1){
-    				$('#pergunta').append('<br>');
-    			}
+    			//if (i == 1){
+    			//	$('#pergunta').append('<br>');
+    			//}
     			
 			}
 			//adiciona o botão responsável por chamar a função "validarResposta"
-			$('#pergunta').append('<br><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input>');
+			$('#pergunta').append('<br><center><input type="button" value="Confirmar Resposta" id="validarResposta" onclick="validarResposta('+questao+','+pin+')" class="butn"> </input></center>');
 			
 		
 		
