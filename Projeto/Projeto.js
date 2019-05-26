@@ -350,8 +350,12 @@ function mudarBackground(posicao){
 function ganhou(pin){
 	pin +=1;
 	$(".venceu").fadeIn(800);
-	$(".interna h4").text('Você venceu!');
-	$(".interna p").text('Jogador '+pin+'');
+	if (pin == 1) {
+		$('#interna2').html('<img class="imgGanhador" src="player1ganhou.png" >');
+	}
+	else{
+		$('#interna2').html('<img class="imgGanhador" src="player2ganhou.png" >');
+	}
 }
 
 //Função responsável por "Alertar" o número de casas a serem avançadas pelo jogador
