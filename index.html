@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="Projeto.js"></script>
 </head>
 <body style="font-size: 5vw;" id="pagina">
+
 		<div class="tabuleiro" align="center">
 			<div class="Pos0" id="Pos0">Largada</div>
 			<div class="player0"><img src="player0.svg" style="height: 8vw; width: auto; top: -1.5vw; left: 300%; position: relative;"></div>
@@ -66,23 +67,30 @@
 		</div>
 
 		<div class="main">
-			<div class="logo"></div>
-			<div id="jogadorAtual" style="font-size: 1.5vw; margin-top: -6%;"> <h1 style="color: green;">Clique em Jogar</h1> </div>
+			<img src="playerIcon1.svg" id="icon1" style="height: 12vw; width: auto; position: absolute; top: 3%; left: 3%; opacity: 0.3;">
+			<img src="playerIcon2.svg" id="icon2" style="height: 12vw; width: auto; position: absolute; top: 3%; right: 3%; opacity: 0.3;">
+			<div class="logo"><img src="logo1.svg" style="height: 13vw; width: auto; position: relative; align-content: center;"></div>
+			<div id="jogadorAtual" style="font-size: 1.5vw; margin-top: -6%; position: relative;"> 
+				<h1 style="color: green;">Clique em Jogar</h1> 
+			</div>
 			<div class="perguntas" id="pergunta"> </div>
 			<center>
-				<button onclick="sortearNumero();" id="rodar">Jogar</button>
-				<input type="text" id="IpNumeroSorteado" placeholder="Número Sorteado" size="15">
-				<input type="text" id="IpPassoAtual" placeholder="Passo Atual" size="15">
+				
+				<button onclick="sortearNumero();" id="rodar" class="butn" style="margin-top: 5%">Jogar</button>
+				<!--<input type="text" id="IpNumeroSorteado" placeholder="Número Sorteado" size="15">
+				<input type="text" id="IpPassoAtual" placeholder="Passo Atual" size="15">-->
 			</center>
+			<div id="dadoSorteado"> </div>
 		</div>
 
 		<div class="venceu" align="center">
 			<div class="interna">
-				<h4>Vez do Jogador 1</h4>
-				<p></p>
-				<button onclick="window.location.reload();">Reinicie o Jogo</button>
+				<div style="height: 70%; width: auto; position: relative;" id="interna2"></div>
+				<button class="butn" onclick="window.location.reload();">Reinicie o Jogo</button>
 			</div>
 		</div>
+		<div class="alertAcertou" align="center"></div>
+		<div class="alertErrou" align="center"></div>
 
 
 </html>

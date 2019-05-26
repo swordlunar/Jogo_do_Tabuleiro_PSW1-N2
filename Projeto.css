@@ -3,6 +3,14 @@
 	src: url(xilosa.ttf);
 }
 
+.imgGanhador{
+	height: 90%;
+	width: auto;
+	top: 10%;
+	position: relative;
+	align-content: center;
+}
+
 .radio{
 	height: 1.5vw;
 	width: 1.5vw;
@@ -10,6 +18,32 @@
 
 p{
 	font-weight: bold;
+}
+
+h1{
+	font-size: 2vw;
+}
+
+.butn {
+  -webkit-border-radius: 13;
+  -moz-border-radius: 13;
+  border-radius: 13px;
+  font-family: xilosa;
+  color: #ffffff;
+  font-size: 2vw;
+  background: #23bd07;
+  padding: 0.5vw 1.5vw 0.5vw 1.5vw;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #028c09;
+  text-decoration: none;
+}
+
+.butn:disabled {
+  background: #004209;
+  text-decoration: none;
 }
 
 #pagina{
@@ -45,18 +79,10 @@ p{
 }
 
 .logo{
-	font-family: xilosa;
-	font-size: 5vw;
-	color: brown;
 	position: relative;
 	height: 24%;
 	width: 40%;
-	background-image: url(logo1.svg);
-	background-repeat: no-repeat;
-	background-size: cover;
 	left: 30%;
-
-
 }
 .venceu{
 	background-color: rgba(0,0,0,0.5);
@@ -66,18 +92,50 @@ p{
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: 12;
+	z-index: 1000;
 	display: none;
+
 }
 .interna{
-	width: 700px;
-	height: 600px;
+	width: 45vw;
+	height: 40vw;
 	margin-top: 5%;
-	background-color: white;
+	background-image: url(backGanhador.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 	border-radius: 15px;
 	display: block;
 	position: relative;
 	padding: 10px;
+	z-index: 1000;
+}
+.alertAcertou{
+	width: 35%;
+	height: 5%;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+	padding: 20px;
+	border-radius: 2px;
+  	background-color: #DFF2BF;
+  	color: #4F8A10;
+  	font-size: 2.5vw;
+  	z-index: 1000;
+  	display: none;
+}
+.alertErrou{
+	width: 35%;
+	height: 5%;
+	position: absolute;
+	top:50%;
+	left: 30%;
+	padding: 20px;
+	border-radius: 2px;
+  	background-color: #FFD2D2;
+  	color: #D8000C;
+  	font-size: 2.5vw;
+  	z-index: 1000;
+  	display: none;
 }
 .perguntas{
 	font-family: Arial, Helvetica, sans-serif;
@@ -86,12 +144,14 @@ p{
 	background-image: url(perguntas.svg); 
 	background-repeat: repeat;
 	margin-left: 5%;
-	margin-right: 5%;
-	width: 90%;
-	height: 35%;
+	margin-right: 3%;
+	width: 92%;
+	height: 39%;
 	overflow: auto;
 	position: relative; 
 	background-size: cover;
+	text-align: justify;
+
 }
 .player0{
 	position: absolute;
