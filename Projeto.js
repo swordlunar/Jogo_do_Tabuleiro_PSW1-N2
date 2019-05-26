@@ -330,19 +330,19 @@ function mudarBackground(posicao){
 
 //A mudança do background é dada de acordo ao último "ponto turistico" que foi ultrapassado
 	if (posicao>=3 && posicao<8) 
-		$('#pagina').css('background-image', 'url(image1.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image1.jpg)').fadeIn(500);
 	else if (posicao>=8 && posicao<11) 
-		$('#pagina').css('background-image', 'url(image2.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image2.jpg)').fadeIn(500);
 	else if (posicao>=11 && posicao<16) 
-		$('#pagina').css('background-image', 'url(image3.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image3.jpg)').fadeIn(500);
 	else if (posicao>=16 && posicao<23) 
-		$('#pagina').css('background-image', 'url(image4.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image4.jpg)').fadeIn(500);
 	else if (posicao>=23 && posicao<30) 
-		$('#pagina').css('background-image', 'url(image5.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image5.jpg)').fadeIn(500);
 	else if (posicao>=30 && posicao<32) 
-		$('#pagina').css('background-image', 'url(image6.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image6.jpg)').fadeIn(500);
 	else if (posicao>=32 && posicao<37) 
-		$('#pagina').css('background-image', 'url(image7.jpg)').fadeIn(500);
+		$('#pagina').css('background-image', 'url(Design/Backgrounds/image7.jpg)').fadeIn(500);
 
 }
 
@@ -351,10 +351,10 @@ function ganhou(pin){
 	pin +=1;
 	$(".venceu").fadeIn(800);
 	if (pin == 1) {
-		$('#interna2').html('<img class="imgGanhador" src="player1ganhou.png" >');
+		$('#interna2').html('<img class="imgGanhador" src="Design/Backgrounds/player1ganhou.png" >');
 	}
 	else{
-		$('#interna2').html('<img class="imgGanhador" src="player2ganhou.png" >');
+		$('#interna2').html('<img class="imgGanhador" src="Design/Backgrounds/player2ganhou.png" >');
 	}
 }
 
@@ -387,7 +387,7 @@ function validarResposta(opcaoCorreta,pin){
  	}
 
   	$('#pergunta').html('');
-  	$("#pergunta").css('background-image', 'url(perguntas.svg)');
+  	$("#pergunta").css('background-image', 'url(Design/perguntas.svg)');
 
 
  }
